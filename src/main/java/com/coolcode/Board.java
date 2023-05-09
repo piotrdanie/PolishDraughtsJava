@@ -26,7 +26,7 @@ public class Board {
         for (int row = 0; row < nextColum; row++) {
             for (int col = 0; col < size; col++) {
                 if ((row + col) % 2 == 0 && blackPawns > 0) {
-                    fields[row][col] = new Pawn("black", "b");
+                    fields[row][col] = new Pawn("black", "b", row, col);
                     blackPawns--;
                 }
             }
@@ -34,7 +34,7 @@ public class Board {
         for (int row = size - nextColum; row < size; row++) {
             for (int col = 0; col < size; col++) {
                 if ((row + col) % 2 == 0 && whitePawns > 0) {
-                    fields[row][col] = new Pawn("white", "w");
+                    fields[row][col] = new Pawn("white", "w", row, col);
                     whitePawns--;
                 }
             }
@@ -46,13 +46,17 @@ public class Board {
             for (int col = 0; col < size; col++) {
                 Pawn pawn = fields[row][col];
                 if (pawn != null) {
-                    System.out.print(pawn.getSymbol() + " ");
+                    System.out.print(pawn.getXYPosition() + " ");
                 } else {
                     System.out.print("-" + " ");
                 }
             }
             System.out.println();
         }
+    }
+
+    public void movePawn(Pawn pawn, int row, int col) {
+
     }
 }
 
