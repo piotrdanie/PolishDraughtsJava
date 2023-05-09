@@ -2,54 +2,50 @@ package com.coolcode;
 
 public class Pawn {
 
-    private String color;
+    private final boolean isWhite;
     private String symbol;
-    private Coordinates position;
+    private final Coordinates position;
 
-    public Pawn(String color, String symbol, int row, int col) {
-        this.color = color;
-        this.symbol = symbol;
+    public Pawn(int row, int col, boolean isWhite) {
         this.position = new Coordinates();
         this.position.x = row;
         this.position.y = col;
+        this.isWhite = isWhite;
     }
 
-    public String getColor() {
-        return this.color;
+    public boolean isWhite() {
+        return isWhite;
     }
 
-    public String getSymbol() {
-        return this.symbol;
-    }
 
     public String getXYPosition() {
         Coordinates position = getPosition();
         int positionX = position.getX();
         int positionY = position.getY();
 
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(positionX);
-        stringBuilder.append("|");
-        stringBuilder.append(positionY);
+        String stringBuilder = positionX +
+                "|" +
+                positionY;
 
-        return stringBuilder.toString();
+        return stringBuilder;
     }
 
     private Coordinates getPosition() {
         return position;
     }
+
+
+    class Coordinates {
+        int x;
+        int y;
+
+        public int getX() {
+            return x;
+        }
+
+        public int getY() {
+            return y;
+        }
+    }
 }
 
-class Coordinates {
-    int x;
-    int y;
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-}
