@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a3ba28-55a1-47d1-a8f3-6c10c0011855" name="Changes" comment="ask size &amp; nice pown">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/Coordinates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/Pawn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/coolcode/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coolcode/Board.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/coolcode/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coolcode/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coolcode/Pawn$Coordinates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/coolcode/Pawn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coolcode/Pawn.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

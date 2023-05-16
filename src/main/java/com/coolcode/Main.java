@@ -7,12 +7,20 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter board size (between 10 and 20): ");
         int size = scanner.nextInt();
+//        int size = 10;
         Board board = new Board(size);
+        board.displayBoard();
+        System.out.print("Enter Pawn position: ");
+        String curentPosition = scanner.next();
+        System.out.print("Enter target position: ");
+        String targetPosition = scanner.next();
+        board.movePawn(curentPosition,targetPosition);
         board.displayBoard();
         scanner.close();
     }
-
 }
+
+
 
 //        // TODO: get user input and check it try except
 //
