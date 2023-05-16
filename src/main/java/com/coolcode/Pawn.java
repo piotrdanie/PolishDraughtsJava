@@ -2,6 +2,7 @@ package com.coolcode;
 
 public class Pawn {
 
+    public static int Coordinates;
     private final boolean isWhite;
     private String symbol;
     private final Coordinates position;

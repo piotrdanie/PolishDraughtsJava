@@ -11,6 +11,7 @@ public class Main {
         board.displayBoard();
         scanner.close();
     }
+
 }
 
 //        // TODO: get user input and check it try except

@@ -27,7 +27,7 @@ public class Board {
         for (int row = 0; row < nextColum; row++) {
             for (int col = 0; col < size; col++) {
                 if ((row + col) % 2 == 0 && blackPawns > 0) {
-                    fields[row][col] = new Pawn(row, col,false);
+                    fields[row][col] = new Pawn(row, col, false);
                     blackPawns--;
                 }
             }
@@ -42,7 +42,7 @@ public class Board {
         }
     }
 
-//    public void displayBoard() {
+    //    public void displayBoard() {
 //        for (int row = 0; row < size; row++) {
 //            for (int col = 0; col < size; col++) {
 //                Pawn pawn = fields[row][col];
@@ -81,39 +81,44 @@ public class Board {
 //        }
 //    }
     public void displayBoard() {
-    // print column labels
-    System.out.print("  ");
-    for (int col = 1; col <= size; col++) {
-        System.out.print(col + " ");
-    }
-    System.out.println();
-
-    // print row labels and field contents
-    for (int row = 0; row < size; row++) {
-        // print row label
-        System.out.print((char) ('A' + row) + " ");
-
-
-        // print field contents
-        for (int col = 0; col < size; col++) {
-            Pawn pawn = fields[row][col];
-            if (pawn != null) {
-                System.out.print(getEmojiPawn(pawn.isWhite()) + " ");
-            } else {
-                System.out.print("  ");
-            }
+        // print column labels
+        System.out.print("  ");
+        for (int col = 1; col <= size; col++) {
+            System.out.print(col + " ");
         }
         System.out.println();
-    }
-}
 
+        // print row labels and field contents
+        for (int row = 0; row < size; row++) {
+            // print row label
+            System.out.print((char) ('A' + row) + " ");
+
+
+            // print field contents
+            for (int col = 0; col < size; col++) {
+                Pawn pawn = fields[row][col];
+                if (pawn != null) {
+                    System.out.print(getEmojiPawn(pawn.isWhite()) + " ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+    }
 
     private String getEmojiPawn(boolean isWhite) {
         return isWhite ? "\u2659" : "\u265F";
     }
 
-
-    public void movePawn(Pawn pawn, int row, int col) {
-
+    public void movePawn(int fromRow, int fromCol, int toRow, int toCol) {
+        fields[toRow][toCol] = fields[fromRow][fromCol];
+        fields[fromRow][fromCol] = null;
     }
+
+//    public void removePawn(Pawn pawnToRemove) {
+//        fields[row][col] = null;
+//        System.out.print("  ");
+//    }
+
 }
