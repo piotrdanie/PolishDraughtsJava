@@ -137,7 +137,7 @@ public class Board {
         int[] indices = new int[2];
         userInput = userInput.toUpperCase();
         String letter = userInput.substring(0, 1);
-        int col = Integer.parseInt(userInput.substring(1));
+        int col = Integer.parseInt(userInput.substring(1))-1;
         int row = convertStringToInteger(letter);
 
 //        System.out.println("row letter " + letter);
