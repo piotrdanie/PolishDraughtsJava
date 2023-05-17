@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65a3ba28-55a1-47d1-a8f3-6c10c0011855" name="Changes" comment="ask size &amp; nice pown">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/Board.java" afterDir="false" />
-    </list>
+    <list default="true" id="65a3ba28-55a1-47d1-a8f3-6c10c0011855" name="Changes" comment="ask size &amp; nice pown" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
