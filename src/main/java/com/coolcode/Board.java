@@ -114,8 +114,8 @@ public class Board {
 
 
     public void movePawn(String curentPosition, String targetPosition) {
-        int[] curent = convertCoordinateToArray(curentPosition);
-        int[] target = convertCoordinateToArray(targetPosition);
+        int[] curent = Util.convertCoordinateToArray(curentPosition, size);
+        int[] target = Util.convertCoordinateToArray(targetPosition, size);
         int curentRow = curent[0];
         int curentCol = curent[1];
         System.out.println("curentPosition " + curentRow +" "+ curentCol);
@@ -133,32 +133,6 @@ public class Board {
         System.out.print(" ");
     }
 
-    public static int[] convertCoordinateToArray(String userInput) {
-        int[] indices = new int[2];
-        userInput = userInput.toUpperCase();
-        String letter = userInput.substring(0, 1);
-        int col = Integer.parseInt(userInput.substring(1))-1;
-        int row = convertStringToInteger(letter);
-
-//        System.out.println("row letter " + letter);
-//        System.out.println("row number " + row);
-//        System.out.println("col " + col);
-
-        indices[0] = row;
-        indices[1] = col;
-
-        return indices;
-    }
-
-    public static int convertStringToInteger(String letter) {
-        HashMap<String, Integer> columnsDict = new HashMap<>();
-
-        for (int row = 0; row < 10; row++) {
-            columnsDict.put(String.valueOf((char) ('A' + row)), row);
-        }
-
-        return columnsDict.get(String.valueOf(letter.charAt(0)));
-    }
 
 //    public static int convertStringToInteger(String letter) {
 //        HashMap<String, Integer> columnsDict = new HashMap<>();
@@ -175,7 +149,6 @@ public class Board {
 //
 //        return columnsDict.get(String.valueOf(letter.charAt(0)));
 //    }
-
 
     public Pawn[][] getFields() {
         return fields;

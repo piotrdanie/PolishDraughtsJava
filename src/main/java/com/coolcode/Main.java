@@ -9,6 +9,8 @@ public class Main {
         int size = scanner.nextInt();
 //        int size = 10;
         Board board = new Board(size);
+//        int i = 0;
+//        while ( i == 10){
         board.displayBoard();
         System.out.print("Enter Pawn position: ");
         String curentPosition = scanner.next();
@@ -16,6 +18,8 @@ public class Main {
         String targetPosition = scanner.next();
         board.movePawn(curentPosition,targetPosition);
         board.displayBoard();
+//        i++;
+//        }
         scanner.close();
     }
 }
