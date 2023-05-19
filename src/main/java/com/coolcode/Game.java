@@ -24,18 +24,19 @@ public class Game {
         };
     }
 
+    private Coordinates getCoordinates(String message) {
+        System.out.print(message);
+        String position = scanner.next();
+        Coordinates coordinates = Util.crateCoordinate(position,board.getSize());
+        return coordinates;
+    }
+
 
     private void playRound() {
+        Coordinates currentCoordinates = getCoordinates("Provide current position: ");
+        Coordinates targetCoordinates = getCoordinates("Provide target position: ");
 
-        System.out.print("Enter Pawn position: ");
-        String curentPosition = scanner.next();
-        System.out.print("Enter target position: ");
-        String targetPosition = scanner.next();
-
-        Coordinates curentCoordinates = Util.crateCoordinate(curentPosition,board.getSize());
-        Coordinates targetCoordinates = Util.crateCoordinate(targetPosition,board.getSize());
-
-        Pawn pawn = checkMove(curentCoordinates, targetCoordinates);
+        Pawn pawn = checkMove(currentCoordinates, targetCoordinates);
         if (pawn != null) {
             tryToMakeMove(pawn);
         }
