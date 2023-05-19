@@ -114,18 +114,15 @@ public class Board {
         return isWhite ? "\u2659" : "\u265F";
     }
 
-    public boolean isPanwOnFields(String curentPosition){
-        Coordinates curentCoordinates = Util.crateCoordinate(curentPosition,size);
-        Pawn pawn = fields[curentCoordinates.getX()][curentCoordinates.getY()];
+    public boolean isPanwOnFields(Coordinates coordinates){
+        Pawn pawn = fields[coordinates.getX()][coordinates.getY()];
         if (pawn != null){
             return true;
         }
         else {return false;}
     }
 
-    public void movePawn(String curentPosition, String targetPosition) {
-        Coordinates curentCoordinates = Util.crateCoordinate(curentPosition,size);
-        Coordinates targetCoordinates = Util.crateCoordinate(targetPosition,size);
+    public void movePawn(Coordinates curentCoordinates, Coordinates targetCoordinates) {
 
         Pawn pawn = fields[curentCoordinates.getX()][curentCoordinates.getY()];
         if (pawn.validateMove(targetCoordinates)){;
@@ -162,5 +159,9 @@ public class Board {
 
     public Pawn[][] getFields() {
         return fields;
+    }
+
+    public Pawn getPawn(Coordinates coordinates) {
+        return this.fields[coordinates.getX()][coordinates.getY()];
     }
 }

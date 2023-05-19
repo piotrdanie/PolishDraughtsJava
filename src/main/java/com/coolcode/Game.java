@@ -6,9 +6,11 @@ public class Game {
 
     Scanner scanner;
     Board board;
+    boolean gameOver;
 
     public Game() {
         scanner = new Scanner(System.in);
+        gameOver = false;
     }
 
     public void start() {
@@ -16,8 +18,8 @@ public class Game {
         int size = scanner.nextInt();
         board = new Board(size);
         board.displayBoard();
-        boolean isGameOver = false;
-        while (!isGameOver) {
+
+        while (!gameOver) {
             playRound();
         };
     }
@@ -29,24 +31,35 @@ public class Game {
         String curentPosition = scanner.next();
         System.out.print("Enter target position: ");
         String targetPosition = scanner.next();
-        boolean isPawn = board.isPanwOnFields(curentPosition)
-                && !board.isPanwOnFields(targetPosition);
-        if (isPawn) {
-            board.movePawn(curentPosition, targetPosition);
-            board.displayBoard();
-        }
 
+        Coordinates curentCoordinates = Util.crateCoordinate(curentPosition,board.getSize());
+        Coordinates targetCoordinates = Util.crateCoordinate(targetPosition,board.getSize());
+
+        Pawn pawn = checkMove(curentCoordinates, targetCoordinates);
+        if (pawn != null) {
+            tryToMakeMove(pawn);
+        }
     }
 
     private Pawn checkMove(Coordinates currentCoordinates, Coordinates targetCoordinates) {
-        return new Pawn(9, 9, true);
+        boolean isPawn = board.isPanwOnFields(currentCoordinates)
+                && !board.isPanwOnFields(targetCoordinates);
+        if (isPawn) {
+            Pawn pawn = board.getPawn(currentCoordinates);
+            return pawn;
+        }
+        return null;
     }
 
     private void tryToMakeMove(Pawn pawn) {
+        // TODO: make move;
 
     }
 
     private boolean checkForWinner() {
+        // TODO: if player wins then return true else return false;`
+        // trzeba by było jakoś zliczać pionki jednego i drugiego koloru czy jedna z tych grup jest równa zero
+        // jeśli tak to gracz z przeciwnymi pionkami wygrał
         return true;
     }
 
