@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Game.main();
+        Game game = new Game();
+        game.start();
     }
 }
 
