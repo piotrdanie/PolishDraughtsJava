@@ -1,8 +1,8 @@
 package com.coolcode;
 
 public class Coordinates {
-    int x;
-    int y;
+    private int x;
+    private int y;
 
     public Coordinates(int row, int col) {
         this.x = row;
@@ -17,4 +17,11 @@ public class Coordinates {
         return y;
     }
 
+    public void setX(int x) {
+        this.x = x;
     }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+}
