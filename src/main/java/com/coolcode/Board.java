@@ -22,10 +22,8 @@ public class Board {
 
     private void placePawns(int size) {
         int blackPawns = (size * size) / 5;
-        System.out.println("blackPawns: " + blackPawns);
         int whitePawns = (size * size) / 5;
         int nextColum = (int) ((int) whitePawns / (size / 2.0));
-        System.out.println("pawns: " + whitePawns + " nextcolumn: " + nextColum);
         for (int row = 0; row < nextColum; row++) {
             for (int col = 0; col < size; col++) {
                 if ((row + col) % 2 == 0 && blackPawns > 0) {
@@ -44,44 +42,6 @@ public class Board {
         }
     }
 
-//        public void displayBoard() {
-//        for (int row = 0; row < size; row++) {
-//            for (int col = 0; col < size; col++) {
-//                Pawn pawn = fields[row][col];
-//                if (pawn != null) {
-//                    System.out.print(pawn.getXYPosition() + " ");
-//                } else {
-//                    System.out.print("-" + " ");
-//                }
-//            }
-//            System.out.println();
-//        }
-//    }
-//    public void displayBoard() {
-//        // print column labels
-//        System.out.print("  ");
-//        for (int col = 1; col <= size; col++) {
-//            System.out.print(col + " ");
-//        }
-//        System.out.println();
-//
-//        // print row labels and field contents
-//        for (int row = 0; row < size; row++) {
-//            // print row label
-//            System.out.print((char) ('A' + row) + " ");
-//
-//            // print field contents
-//            for (int col = 0; col < size; col++) {
-//                Pawn pawn = fields[row][col];
-//                if (pawn != null) {
-//                    System.out.print(pawn.getXYPosition() + " ");
-//                } else {
-//                    System.out.print("- ");
-//                }
-//            }
-//            System.out.println();
-//        }
-//    }
     public void displayBoard() {
 
         // print column labels
@@ -113,8 +73,7 @@ public class Board {
 
 
 
-    public boolean isPawnOnFields(String currentPosition){
-        Coordinates coordinates = Util.crateCoordinate(currentPosition,size);
+    public boolean isPawnOnFields(Coordinates coordinates){
         Pawn pawn = getFieldByCoordinate(coordinates);
         if (pawn != null){
             return true;
@@ -122,10 +81,7 @@ public class Board {
         else {return false;}
     }
 
-    public void movePawn(String curentPosition, String targetPosition) {
-        Coordinates curentCoordinates = Util.crateCoordinate(curentPosition,size);
-        Coordinates targetCoordinates = Util.crateCoordinate(targetPosition,size);
-
+    public void movePawn(Coordinates curentCoordinates, Coordinates targetCoordinates) {
         Pawn pawn = getFieldByCoordinate(curentCoordinates);
         if (pawn.validateMove(targetCoordinates)) {
             pawn.setPosition(targetCoordinates);
@@ -175,7 +131,7 @@ public class Board {
         return isSymbolInFields(blackSymbol);
     }
 
-    private boolean checkWinner() {
+    public boolean checkWinner() {
         if (!checkIfBlackPawnsExist() || !checkIfWhitePawnsExists()) {
             return true;
         }
@@ -183,10 +139,9 @@ public class Board {
     }
 
     public String getWinner() {
-        if (checkWinner()) {
-            if (checkIfWhitePawnsExists()) {
-                return whiteSymbol;
-            }
-        } return blackSymbol;
+        if (checkIfWhitePawnsExists()) {
+            return whiteSymbol;
+        }
+        return blackSymbol;
     }
 }
