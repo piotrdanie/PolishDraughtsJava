@@ -21,8 +21,6 @@ public class Game {
         int size = scanner.nextInt();
         board = new Board(size);
 
-        BoardView.displayBoard(board);
-
         while (!gameOver) {
             playRound();
         };

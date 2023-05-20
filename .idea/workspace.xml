@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a3ba28-55a1-47d1-a8f3-6c10c0011855" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/controller/BoardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/view/BoardView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/view/UserInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/model/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/model/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/model/Pawn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/controller/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/model/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/view/BoardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/view/BoardView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/view/UserInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/view/UserInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +94,7 @@
       <workItem from="1684296859439" duration="947000" />
       <workItem from="1684473339894" duration="792000" />
       <workItem from="1684507230901" duration="3027000" />
-      <workItem from="1684567742866" duration="3714000" />
+      <workItem from="1684567742866" duration="5330000" />
     </task>
     <servers />
   </component>

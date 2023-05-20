@@ -3,9 +3,17 @@ package com.coolcode.view;
 import com.coolcode.model.Board;
 import com.coolcode.model.Pawn;
 
+import java.util.Scanner;
+
 public class BoardView {
 
+
     private final String squareShape = "\u25A1";
+    private Scanner scanner;
+
+    public BoardView() {
+        this.scanner = new Scanner(System.in);
+    }
 
     public void displayBoard(Board board) {
         // print column labels
@@ -36,5 +44,22 @@ public class BoardView {
             }
             System.out.println();
         }
+    }
+
+    public int getNumberBetween(int min, int max) {
+        while (true) {
+            System.out.printf(
+                    "Please provide the number between %s and %s: ",
+                    min, max
+            );
+            int choice  = scanner.nextInt();
+            scanner.nextLine();
+
+            if (choice >= min && choice <= max) {
+                return choice;
+            }
+            System.out.println("Invalid choice. Please try agin.");
+        }
+
     }
 }
