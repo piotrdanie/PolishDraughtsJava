@@ -16,6 +16,7 @@ public class Coordinates {
     public int getY() {
         return y;
     }
+<<<<<<< HEAD:src/main/java/com/coolcode/model/Coordinates.java
 
     public void setX(int x) {
         this.x = x;
@@ -24,4 +25,6 @@ public class Coordinates {
     public void setY(int y) {
         this.y = y;
     }
+=======
+>>>>>>> parent of 27bd548 (prawie koniec):src/main/java/com/coolcode/Coordinates.java
 }
