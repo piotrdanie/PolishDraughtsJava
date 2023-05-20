@@ -105,12 +105,15 @@ public class Board {
         System.out.print(" ");
     }
 
-
     public Pawn[][] getFields() {
         return fields;
     }
 
-    public Pawn getPawn(Coordinates coordinates) {
+    public Pawn getFieldFromCoordinates(Coordinates coordinates) {
         return this.fields[coordinates.getX()][coordinates.getY()];
+    }
+
+    public void setFieldFromCoordinates(Pawn pawn, Coordinates coordinates) {
+        this.fields[coordinates.getX()][coordinates.getY()] = pawn;
     }
 }
