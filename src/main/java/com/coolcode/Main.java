@@ -1,6 +1,6 @@
 package com.coolcode;
 
-import java.util.Scanner;
+import com.coolcode.model.Game;
 
 public class Main {
     public static void main(String[] args) {

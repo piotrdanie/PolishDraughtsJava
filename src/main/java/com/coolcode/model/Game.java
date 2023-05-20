@@ -1,4 +1,7 @@
-package com.coolcode;
+package com.coolcode.model;
+
+import com.coolcode.Util;
+import com.coolcode.view.BoardView;
 
 import java.util.Scanner;
 
@@ -17,7 +20,8 @@ public class Game {
         System.out.print("Enter board size (between 10 and 20): ");
         int size = scanner.nextInt();
         board = new Board(size);
-        board.displayBoard();
+
+        BoardView.displayBoard(board);
 
         while (!gameOver) {
             playRound();
@@ -46,7 +50,7 @@ public class Game {
         boolean isPawn = board.isPanwOnFields(currentCoordinates)
                 && !board.isPanwOnFields(targetCoordinates);
         if (isPawn) {
-            Pawn pawn = board.getPawn(currentCoordinates);
+            Pawn pawn = board.getFieldFromCoordinates(currentCoordinates);
             return pawn;
         }
         return null;

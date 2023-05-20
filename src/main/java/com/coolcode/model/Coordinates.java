@@ -1,4 +1,4 @@
-package com.coolcode;
+package com.coolcode.model;
 
 public class Coordinates {
     private int x;

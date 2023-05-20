@@ -1,17 +1,19 @@
-package com.coolcode;
+package com.coolcode.model;
 
 public class Pawn {
 
     public static int Coordinates;
-    private final boolean isWhite;
     private String symbol;
-    private Coordinates position;
+    private com.coolcode.model.Coordinates position;
 
     private boolean isCrowned;
 
-    public Pawn(int row, int col, boolean isWhite) {
+
+
+
+    public Pawn(int row, int col, String symbol) {
         this.position = new Coordinates(row,col);
-        this.isWhite = isWhite;
+        this.symbol = symbol;
         this.isCrowned = false;
     }
 
@@ -19,11 +21,6 @@ public class Pawn {
         // TODO if the pawn go to the oposite board then it should set the isCrowned field to true
         this.isCrowned = true;
     }
-
-    public boolean isWhite() {
-        return isWhite;
-    }
-
 
     public String getXYPosition() {
         Coordinates position = getPosition();
@@ -33,8 +30,11 @@ public class Pawn {
         String stringBuilder = positionX +
                 "|" +
                 positionY;
-
         return stringBuilder;
+    }
+
+    public String getSymbol() {
+        return symbol;
     }
 
     public Coordinates getPosition() {

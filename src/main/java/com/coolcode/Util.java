@@ -1,5 +1,7 @@
 package com.coolcode;
 
+import com.coolcode.model.Coordinates;
+
 import java.util.HashMap;
 
 public class Util {
