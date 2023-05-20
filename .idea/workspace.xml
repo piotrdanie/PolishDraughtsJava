@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a3ba28-55a1-47d1-a8f3-6c10c0011855" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/Coordinates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coolcode/Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coolcode/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coolcode/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/coolcode/game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coolcode/game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/Pawn.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +59,13 @@
   }
 }</component>
   <component name="RunManager">
+    <configuration name="PolishDraughts" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.coolcode.Main" />
+      <module name="polish-draughts" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="polish-draughts-java-piotrpoloczek" />
       <method v="2">
@@ -89,6 +90,7 @@
       <updated>1683471121425</updated>
       <workItem from="1683661468428" duration="5890000" />
       <workItem from="1684296859439" duration="947000" />
+      <workItem from="1684580746514" duration="1499000" />
     </task>
     <servers />
   </component>

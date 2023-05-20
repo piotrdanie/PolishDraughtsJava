@@ -6,6 +6,8 @@ public class Board {
 
     private int size;
     private Pawn[][] fields;
+    private static final String whiteSymbol = "\u2659";
+    private static final String blackSymbol = "\u265F";
 
 
     public Board(int size) {
@@ -27,7 +29,7 @@ public class Board {
         for (int row = 0; row < nextColum; row++) {
             for (int col = 0; col < size; col++) {
                 if ((row + col) % 2 == 0 && blackPawns > 0) {
-                    fields[row][col] = new Pawn(row, col, false);
+                    fields[row][col] = new Pawn(row, col, blackSymbol);
                     blackPawns--;
                 }
             }
@@ -35,7 +37,7 @@ public class Board {
         for (int row = size - nextColum; row < size; row++) {
             for (int col = 0; col < size; col++) {
                 if ((row + col) % 2 == 0 && whitePawns > 0) {
-                    fields[row][col] = new Pawn(row, col, true);
+                    fields[row][col] = new Pawn(row, col, whiteSymbol);
                     whitePawns--;
                 }
             }
@@ -99,7 +101,7 @@ public class Board {
             for (int col = 0; col < size; col++) {
                 Pawn pawn = fields[row][col];
                 if (pawn != null) {
-                    System.out.print(getEmojiPawn(pawn.isWhite()));
+                    System.out.print(pawn.getSymbol());
 
                 } else {
                     System.out.print(" ");
@@ -110,13 +112,10 @@ public class Board {
     }
 
 
-    private String getEmojiPawn(boolean isWhite) {
-        return isWhite ? "\u2659" : "\u265F";
-    }
 
-    public boolean isPanwOnFields(String curentPosition){
-        Coordinates curentCoordinates = Util.crateCoordinate(curentPosition,size);
-        Pawn pawn = fields[curentCoordinates.getX()][curentCoordinates.getY()];
+    public boolean isPawnOnFields(String currentPosition){
+        Coordinates coordinates = Util.crateCoordinate(currentPosition,size);
+        Pawn pawn = getFieldByCoordinate(coordinates);
         if (pawn != null){
             return true;
         }
@@ -127,40 +126,65 @@ public class Board {
         Coordinates curentCoordinates = Util.crateCoordinate(curentPosition,size);
         Coordinates targetCoordinates = Util.crateCoordinate(targetPosition,size);
 
-        Pawn pawn = fields[curentCoordinates.getX()][curentCoordinates.getY()];
-        if (pawn.validateMove(targetCoordinates)){;
-        pawn.setPosition(targetCoordinates);
-
-        fields[targetCoordinates.getX()][targetCoordinates.getY()] = pawn;
-        removePawn(curentCoordinates);}
+        Pawn pawn = getFieldByCoordinate(curentCoordinates);
+        if (pawn.validateMove(targetCoordinates)) {
+            pawn.setPosition(targetCoordinates);
+            setFieldByCoordinate(pawn, targetCoordinates);
+            removePawn(curentCoordinates);
+        }
         else {
             System.out.println("Check rules!!! ");
         }
     }
 
     public void removePawn(Coordinates coordinates) {
-        fields[coordinates.getX()][coordinates.getY()] = null;
-        System.out.print(" ");
+        setFieldByCoordinate(null, coordinates);
     }
-
-
-//    public static int convertStringToInteger(String letter) {
-//        HashMap<String, Integer> columnsDict = new HashMap<>();
-//        columnsDict.put("A", 1);
-//        columnsDict.put("B", 1);
-//        columnsDict.put("C", 2);
-//        columnsDict.put("D", 3);
-//        columnsDict.put("E", 4);
-//        columnsDict.put("F", 5);
-//        columnsDict.put("G", 6);
-//        columnsDict.put("H", 7);
-//        columnsDict.put("I", 8);
-//        columnsDict.put("J", 9);
-//
-//        return columnsDict.get(String.valueOf(letter.charAt(0)));
-//    }
 
     public Pawn[][] getFields() {
         return fields;
+    }
+
+    public Pawn getFieldByCoordinate(Coordinates coordinates) {
+        return fields[coordinates.getX()][coordinates.getY()];
+    }
+
+    public void setFieldByCoordinate(Pawn pawn, Coordinates coordinates) {
+        this.fields[coordinates.getX()][coordinates.getY()] = pawn;
+    }
+
+    // check if there is pawn with specific color
+    private boolean isSymbolInFields(String symbol) {
+        for (Pawn[] row : fields) {
+            for (Pawn pawn : row) {
+                if (pawn.getSymbol() == symbol) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private boolean checkIfWhitePawnsExists() {
+        return isSymbolInFields(whiteSymbol);
+    }
+
+    private boolean checkIfBlackPawnsExist() {
+        return isSymbolInFields(blackSymbol);
+    }
+
+    private boolean checkWinner() {
+        if (!checkIfBlackPawnsExist() || !checkIfWhitePawnsExists()) {
+            return true;
+        }
+        return false;
+    }
+
+    public String getWinner() {
+        if (checkWinner()) {
+            if (checkIfWhitePawnsExists()) {
+                return whiteSymbol;
+            }
+        } return blackSymbol;
     }
 }

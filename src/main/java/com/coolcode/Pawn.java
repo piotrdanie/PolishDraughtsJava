@@ -3,25 +3,20 @@ package com.coolcode;
 public class Pawn {
 
     public static int Coordinates;
-    private final boolean isWhite;
     private String symbol;
     private Coordinates position;
 
     private boolean isCrowned;
 
-    public Pawn(int row, int col, boolean isWhite) {
+    public Pawn(int row, int col, String symbol) {
         this.position = new Coordinates(row,col);
-        this.isWhite = isWhite;
         this.isCrowned = false;
+        this.symbol = symbol;
     }
 
     public void crownPawn() {
         // TODO if the pawn go to the oposite board then it should set the isCrowned field to true
         this.isCrowned = true;
-    }
-
-    public boolean isWhite() {
-        return isWhite;
     }
 
 
@@ -73,6 +68,9 @@ public class Pawn {
         return false;
     }
 
+    public String getSymbol() {
+        return symbol;
+    }
 }
 
 
