@@ -1,10 +1,9 @@
 package com.coolcode;
 
-import com.coolcode.model.Coordinates;
-
 import java.util.HashMap;
 
 public class Util {
+
 
     public static int[] convertCoordinateToArray(String userInput, int size) {
         int[] indices = new int[2];
@@ -28,4 +27,12 @@ public class Util {
 
         return columnsDict.get(String.valueOf(letter.charAt(0)));
     }
+
+    public static Coordinates crateCoordinate (String position, int size){
+        int[] curent = Util.convertCoordinateToArray(position, size);
+        int Row = curent[0];
+        int Col = curent[1];
+        Coordinates coordinates = new Coordinates(Row, Col);
+        return  coordinates;
+    };
 }

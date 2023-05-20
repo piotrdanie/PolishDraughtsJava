@@ -81,6 +81,7 @@ public class Board {
 //        }
 //    }
     public void displayBoard() {
+
         // print column labels
         System.out.print(" ");
         for (int col = 1; col <= size; col++) {
@@ -99,6 +100,7 @@ public class Board {
                 Pawn pawn = fields[row][col];
                 if (pawn != null) {
                     System.out.print(getEmojiPawn(pawn.isWhite()));
+
                 } else {
                     System.out.print(" ");
                 }
@@ -112,24 +114,32 @@ public class Board {
         return isWhite ? "\u2659" : "\u265F";
     }
 
-
-    public void movePawn(String curentPosition, String targetPosition) {
-        int[] curent = Util.convertCoordinateToArray(curentPosition, size);
-        int[] target = Util.convertCoordinateToArray(targetPosition, size);
-        int curentRow = curent[0];
-        int curentCol = curent[1];
-        System.out.println("curentPosition " + curentRow +" "+ curentCol);
-
-        int targetRow = target[0];
-        int targetCol = target[1];
-        System.out.println("targetPosition " + targetRow +" "+ targetCol);
-        fields[targetRow][targetCol] = fields[curentRow][curentCol];
-        removePawn(curentRow,curentCol);
+    public boolean isPanwOnFields(String curentPosition){
+        Coordinates curentCoordinates = Util.crateCoordinate(curentPosition,size);
+        Pawn pawn = fields[curentCoordinates.getX()][curentCoordinates.getY()];
+        if (pawn != null){
+            return true;
+        }
+        else {return false;}
     }
 
+    public void movePawn(String curentPosition, String targetPosition) {
+        Coordinates curentCoordinates = Util.crateCoordinate(curentPosition,size);
+        Coordinates targetCoordinates = Util.crateCoordinate(targetPosition,size);
 
-    public void removePawn(int row, int col) {
-        fields[row][col] = null;
+        Pawn pawn = fields[curentCoordinates.getX()][curentCoordinates.getY()];
+        if (pawn.validateMove(targetCoordinates)){;
+        pawn.setPosition(targetCoordinates);
+
+        fields[targetCoordinates.getX()][targetCoordinates.getY()] = pawn;
+        removePawn(curentCoordinates);}
+        else {
+            System.out.println("Check rules!!! ");
+        }
+    }
+
+    public void removePawn(Coordinates coordinates) {
+        fields[coordinates.getX()][coordinates.getY()] = null;
         System.out.print(" ");
     }
 
