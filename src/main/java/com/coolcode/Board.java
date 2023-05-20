@@ -157,8 +157,10 @@ public class Board {
     private boolean isSymbolInFields(String symbol) {
         for (Pawn[] row : fields) {
             for (Pawn pawn : row) {
-                if (pawn.getSymbol() == symbol) {
-                    return true;
+                if (pawn != null) {
+                    if (pawn.getSymbol() == symbol) {
+                        return true;
+                    }
                 }
             }
         }
