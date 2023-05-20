@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="65a3ba28-55a1-47d1-a8f3-6c10c0011855" name="Changes" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/controller/BoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/model/Board.java" afterDir="false" />
@@ -13,11 +14,16 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/view/BoardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/view/BoardView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/view/UserInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/view/UserInput.java" afterDir="false" />
 =======
+=======
+>>>>>>> parent of 27bd548 (prawie koniec)
       <change afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/coolcode/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/coolcode/Pawn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/coolcode/Pawn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/coolcode/Pawn.class" afterDir="false" />
+<<<<<<< HEAD
+>>>>>>> parent of 27bd548 (prawie koniec)
+=======
 >>>>>>> parent of 27bd548 (prawie koniec)
     </list>
     <option name="SHOW_DIALOG" value="false" />
