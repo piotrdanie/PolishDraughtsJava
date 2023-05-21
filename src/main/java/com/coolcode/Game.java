@@ -4,16 +4,25 @@ import java.util.Scanner;
 
 public class Game {
 
-    public static void main() {
+    private View view;
+    private Board board;
+    private static final int MIN_SIZE = 10;
+    private static final int MAX_SIZE = 20;
 
-        // get size of the board from user
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter board size (between 10 and 20): ");
-        int size = scanner.nextInt();
 
-        // prepare the game
-        Board board = new Board(size);
+    public Game() {
+        view = new View();
+        int size = view.getBoardSize(MIN_SIZE, MAX_SIZE, "Enter board size.");
+        board = new Board(size);
+
+    }
+
+    public void twoPlayersMode() {
+
         board.displayBoard();
+
+        Scanner scanner = new Scanner(System.in);
+
 
         while (true) {
             // get user current coordinates
@@ -45,8 +54,4 @@ public class Game {
 
         scanner.close();
     }
-
-
-
-
 }
