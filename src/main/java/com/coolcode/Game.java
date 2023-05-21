@@ -19,29 +19,21 @@ public class Game {
 
     public void twoPlayersMode() {
 
-        board.displayBoard();
-
         Scanner scanner = new Scanner(System.in);
 
 
         while (true) {
+            board.displayBoard();
+
             // get user current coordinates
-            System.out.print("Enter Pawn position: ");
-            String curentPosition = scanner.next();
-            Coordinates currentCoordinates = Util.crateCoordinate(curentPosition, board.getSize());
+            Coordinates currentCoordinates = getCurrentCoordinates();
 
             // get user target coordinates
-            System.out.print("Enter target position: ");
-            String targetPosition = scanner.next();
-            Coordinates targetCoordinates = Util.crateCoordinate(targetPosition, board.getSize());
+            Coordinates targetCoordinates = getTargetCoordinates();
 
-            // validate the coordinates
-            boolean isPawn = board.isPawnOnFields(currentCoordinates)
-                    && !board.isPawnOnFields(targetCoordinates);
-            if (isPawn) {
-                board.movePawn(currentCoordinates, targetCoordinates);
-                board.displayBoard();
-            }
+            // move pawn
+            board.movePawn(currentCoordinates, targetCoordinates);
+
 
             // check for winner in the match
             if (board.checkWinner()) {
@@ -49,9 +41,32 @@ public class Game {
                 System.out.println("The winner of the match is " + winnerSymbol);
                 break;
             }
-
         }
-
-        scanner.close();
     }
+
+    private Coordinates getCurrentCoordinates() {
+        while (true) {
+            String position = view.getField("Enter current coordinates: ");
+            Coordinates coordinates = Util.crateCoordinate(position, board.getSize());
+
+            // check if there is a pawn
+            if (board.isPawnOnFields(coordinates)) {
+                return coordinates;
+            }
+        }
+    }
+
+    private Coordinates getTargetCoordinates() {
+        while (true) {
+            String position = view.getField("Enter target coordinates: ");
+            Coordinates coordinates = Util.crateCoordinate(position, board.getSize());
+
+            // check if there is a pawn
+            if (!board.isPawnOnFields(coordinates)) {
+                return coordinates;
+            }
+        }
+    }
+
+
 }

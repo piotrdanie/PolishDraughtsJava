@@ -32,5 +32,10 @@ public class View {
         return getNumberBetween(min, max);
     }
 
-
+    public String getField(String message) {
+        System.out.print(message);
+        String field = scanner.next();
+        scanner.nextLine();
+        return field;
+    }
 }
